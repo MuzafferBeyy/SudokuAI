@@ -4,7 +4,7 @@
 
 In this problem we need to solve 10 sudokus which they 9x9. According to definition we have 9x9 grid and for every cell we can have following domain X = {1,2,3,4,5,6,7,8,9}. In initial state some of the cells are prefilled so we need to fill remaining cellsthat satisfiesevery line, row mustconsist all elements of domain. In addition,our 9x9 gridiscreated by 9 different small 3x3 gridsshown in the initial state. So in every small 3x3 grid we also need to have every element of domaina least once, which means at most once at the same time.
 
-photo
+![image](https://user-images.githubusercontent.com/41572446/121977430-4f9e0580-cd86-11eb-8353-bc313a9960b3.png)
 
 ### Restrictions
 
@@ -27,7 +27,7 @@ A state is the situation of the table with some values inside or no values insid
 
 Initial state is a sudoku grid with some numbers inside it. The grids also consist of0 values where there are no initial domain elements inside. We call this as an initial state because we need a given state to solve sudoku. Thus,the first given sudoku is our initial state. The filled numbers createrestrictions from the beginning but there is no need to be any given filled number for a sudoku but we can still come up with a solution. There is an example of initial state.
 
-			Photo
+![image](https://user-images.githubusercontent.com/41572446/121977487-70fef180-cd86-11eb-9f37-788102bde12c.png)
 
 
 ### Possible Actions
@@ -38,3 +38,8 @@ We can calculate the possible actions from a given states. Possible action is th
 ### Maximum Branching Factor
 
 The maximum branching factor of the tree is 9 because we have 9 unique values in our domain. We can see this situation when the row, column and small 3x3 grid of a given cell is all empty. In this case we can try all {1,2,3,4,5,6,7,8,9} values for the next state and all of the states will be valid as a next state. 
+
+
+### Maximum Depth of the Search Tree
+
+Maximum depth of a tree is 81. If we receive an empty sudoku and need to try every possible solution from the beginning that means we must look at least 81 steps. If we consider we are looking every possible arrangement in given depth, that means we can exceed depth 81 even in the worst case because in depth 81 we are looking every possible complete sudokus and if there is a solution we need to find it depth 81 in worst case.
